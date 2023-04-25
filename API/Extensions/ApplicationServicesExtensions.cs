@@ -37,11 +37,17 @@ services.Configure<ApiBehaviorOptions>(options =>
                 Error = errors
             };
 
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
+
             return new BadRequestObjectResult(errorResponse);
     };
-});           
-            
-            
+});             
             
             return services;
         }
