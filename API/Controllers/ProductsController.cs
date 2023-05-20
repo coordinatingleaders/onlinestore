@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using API.Dtos;
 using API.Errors;
 using API.Helpers;
